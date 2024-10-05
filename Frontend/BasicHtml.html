@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Html</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 70px;
+            background-color: gray;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul li {
+            list-style: none;
+            color: black;
+            font-size: 2rem;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        li a {
+            text-decoration: none;
+            padding: 2% 5%;
+            color: black;
+            transition: color 0.5s ease;
+        }
+
+        li a:hover {
+            color: #ddd;
+        }
+
+        #section1,
+        #section2,
+        #section3 {
+            width: 100%;
+            height: 100vh;
+        }
+
+        h1,
+        h2,
+        p {
+            padding: 10px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#section1">Section1</a></li>
+                <li><a href="#section2">Section2</a></li>
+                <li><a href="#section3">Section3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="section1">
+            <h1>Section 1</h1>
+            <h2>HTML Basics Demonstration</h2>
+            <p>This is a basic HTML demonstration to showcase some basic HTML elements.</p>
+            <p> <i>Paragraph with italic text</i> </p>
+            <p> <b>Paragraph with bold text</b> </p>
+            <p>See more project to click <b><a href="https://codingwithmuzim-portfolio.netlify.app/">portfolio</a></b>
+                its my
+                portfolio.<i>Anchor tag linking to an external page</i></p>
+            <h2>Key HTML Elements</h2>
+            <ul>
+                <li>Heading (<code>h1</code> to <code>h6</code>)</li>
+                <li>Paragraph (<code>p</code>)</li>
+                <li>Anchor (<code>a</code>)</li>
+                <li>Unordered List (<code>ul</code>)</li>
+                <li>List Item (<code>li</code>)</li>
+                <li>Label (<code>label</code>)</li>
+                <li>Blockquote (<code>blockquote</code>)</li>
+                <li>Image (<code>img</code>)</li>
+                <li>Division (<code>div</code>)</li>
+                <li>Span (<code>span</code>)</li>
+            </ul>
+        </section>
+        <section id="section2">
+            <h1>Section 2</h1>
+            <h2>Blockquote Example</h2>
+            <blockquote>
+                "This is a blockquote element, typically used to quote text from another source."
+            </blockquote>
+            <h2>Image, Division, and Span Example</h2>
+            <div>
+                <p>This is a division (<code>div</code>) element with a <span>highlighted span</span> inside it.</p>
+            </div>
+            <img src="https://via.placeholder.com/150" alt="Sample Image">
+        </section>
+        <section id="section3">
+            <h1>Section 3</h1>
+            <h2>Form Example</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Class Example</title>
+    <style>
+        /* Link pseudo-classes */
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:visited {
+            color: purple;
+        }
+        a:hover {
+            color: red;
+        }
+        a:active {
+            color: green;
+        }
+
+        /* Button focus and hover pseudo-classes */
+        button {
+            padding: 10px 15px;
+            background-color: lightgray;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+        button:focus {
+            outline: 2px solid blue;
+        }
+
+        /* :first-child and :last-child */
+        ul li:first-child {
+            font-weight: bold;
+            color: darkblue;
+        }
+        ul li:last-child {
+            font-weight: bold;
+            color: darkred;
+        }
+
+        /* :nth-child and :nth-of-type */
+        ul li:nth-child(odd) {
+            background-color: lightyellow;
+        }
+        ul li:nth-child(even) {
+            background-color: lightgreen;
+        }
+        
+        /* :focus for input */
+        input:focus {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pseudo-Class Example</h1>
+
+    <a href="#">This is a link</a><br>
+    <a href="#">This is another link</a>
+
+    <hr>
+
+    <button>Click me</button>
+
+    <hr>
+
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth item</li>
+        <li>Last item</li>
+    </ul>
+
+    <hr>
+
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" placeholder="Focus me!">
+
+</body>
+</html>
+-->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Element Example</title>
+    <style>
+        /* Styling headers with ::before and ::after pseudo-elements */
+        h1::before {
+            content: "✨ ";
+            font-size: 24px;
+        }
+
+        h1::after {
+            content: " ✨";
+            font-size: 24px;
+        }
+
+        h2::before {
+            content: "▶ ";
+            color: darkblue;
+        }
+
+
+        /* Styling blockquote with ::before and ::after */
+        blockquote::before {
+            content: "“";
+            font-size: 40px;
+            color: lightgray;
+            vertical-align: top;
+            line-height: 0;
+        }
+
+        blockquote::after {
+            content: "”";
+            font-size: 40px;
+            color: lightgray;
+            vertical-align: bottom;
+            line-height: 0;
+        }
+
+        /* Custom styling for paragraphs using ::first-line and ::first-letter */
+        p::first-line {
+            font-weight: bold;
+            color: darkblue;
+        }
+
+        p::first-letter {
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Heading with Pseudo-Elements</h1>
+
+    <h2>Subheading with Pseudo-Elements</h2>
+
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+
+    <blockquote>
+        This is a blockquote that uses pseudo-elements to display quotation marks.
+    </blockquote>
+
+    <p>This is a paragraph. The first line of this paragraph is bold and blue, and the first letter is styled to be
+        larger and red using pseudo-elements.</p>
+
+</body>
+
+</html> -->

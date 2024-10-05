@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #current-date-time {
+            font-size: 1.5em;
+            color: #333;
+            text-align: center;
+
+        }
+
+        #show-date-time {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 50px 550px;
+        }
+
+
+        #show-date-time:hover {
+            background-color: #0056b3;
+        }
+
+        .form {
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #btn:hover {
+            background-color: #0056b3;
+        }
+
+        .form dt,
+        label {
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+
+        .form input {
+            font-size: 1.2rem;
+            padding: 5px;
+        }
+
+        #usernameerror,
+        #passworderror,
+        #mobileerror,
+        #genderError {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Click the Button to Display Current Date and Time</h1>
+    <button id="show-date-time">Show Date and Time</button>
+
+    <div id="current-date-time"></div>
+    <hr>
+    <h1>Form with JavaScript Validation</h1>
+    <form class="form" id="form">
+        <h3>Register User</h3>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input id="UserName" type="text" name="UserName" placeholder="Enter Name" /></dd>
+            <dd id="usernameerror"></dd>
+            <dt>Password</dt>
+            <dd><input id="password" type="password" name="Password" placeholder="password" /></dd>
+            <dd id="passworderror"></dd>
+            <dt>Mobile</dt>
+            <dd><input id="Mobile" type="text" name="Mobile" placeholder="91+9999999999" /></dd>
+            <dd id="mobileerror"></dd>
+            <dt>Gender</dt>
+            <dd>
+                <input type="radio" name="Gender" value="Male" /> <label>Male</label>
+                <input type="radio" name="Gender" value="Female" /> <label>Female</label>
+                <input type="radio" name="Gender" value="other" /> <label>Other</label>
+
+            </dd>
+            <dd id="genderError"></dd>
+        </dl>
+        <button id="btn" type="submit">Register</button>
+    </form>
+    <hr>
+    <h2>console.log() is one of the most commonly used debugging tools in JavaScript. It allows developers to output
+        values, messages, or any kind of information to the browser’s console, which can help in identifying and fixing
+        bugs in the code. e.g-</h2>
+    <h3>
+        <pre>
+            function processData(data) {
+                console.log("Step 1: Received data", data);
+                
+                let processed = data.filter(item => item.active);
+                console.log("Step 2: Filtered active items", processed);
+                
+                // Further processing...
+                return processed;
+            }
+            let sampleData = [{ active: true }, { active: false }];
+            processData(sampleData);
+        </pre>
+    </h3>
+
+    <h1>Create JSON object</h1>
+    <h3>
+        <pre>
+        const person = {
+            "name": "John Doe",
+            "age": 30,
+            "email": "john.doe@example.com",
+            "address": {
+                "street": "123 Main St",
+                "city": "New York",
+                "zip": "10001"
+            },
+            "hobbies": ["reading", "traveling", "swimming"]
+        };
+        console.log(person.name); 
+        console.log(person.address.street);
+        console.log(person.hobbies[0]);        
+    </pre>
+    </h3>
+    <script>
+        const button = document.getElementById('show-date-time');
+        const dateTimeDisplay = document.getElementById('current-date-time');
+
+        button.addEventListener('click', function () {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            dateTimeDisplay.textContent = `Current Date and Time: ${dateTimeString} `;
+        });
+
+        const form = document.getElementById('form');
+        const UserName = document.getElementById('UserName');
+        const usernameerror = document.getElementById('usernameerror');
+        const password = document.getElementById('password');
+        const passworderror = document.getElementById('passworderror');
+        const Mobile = document.getElementById('Mobile');
+        const mobileerror = document.getElementById('mobileerror');
+        const gender = document.getElementsByName('Gender');
+        const gendererror = document.getElementById('genderError');
+        let genderSelect = false;
+
+        form.addEventListener('submit', function (event) {
+
+            if (UserName.value == '') {
+                usernameerror.textContent = 'Please enter your name.';
+                event.preventDefault();
+            }
+
+            if (password.value == '') {
+                passworderror.textContent = 'Please enter your password.';
+                event.preventDefault();
+            }
+
+            if (Mobile.value == '') {
+                mobileerror.textContent = 'Please enter your mobile number.';
+                event.preventDefault();
+            } else {
+                if (Mobile.value.match(/\+91\d{10}/)) {
+                    mobileerror.textContent = '';
+                } else {
+                    mobileerror.textContent = 'Invalid mobile number.';
+                    event.preventDefault();
+                }
+            }
+
+            for (var i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    genderSelect = true;
+                    break;
+                }
+            }
+
+            if (!genderSelect) {
+                genderError.textContent = 'Please select your gender.';
+                event.preventDefault();
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
+<!-- function ValidateUser(userDetails){
+     if(userDetails.UserName==""){
+         error.UserName = "User Name Required";
+     } else {
+         if(userDetails.UserName.length<4){
+           error.UserName = "Name too short";
+         } else {
+           error.UserName = "";
+         }
+     }
+     
+     if(userDetails.Password==""){
+        error.Password = "Password Required";
+     }
+
+     if(userDetails.Mobile==""){
+        error.Mobile = "Mobile Required";
+     } else {
+         if(userDetails.Mobile.match(/\+91\d{10}/)) {
+             error.Mobile = "";
+         } else {
+             error.Mobile = "Invalid Mobile";
+         }
+     }
+
+     if(userDetails.City=="-1") {
+        error.City = "Please Select Your City";
+     }
+
+     if(userDetails.Gender==""){
+        error.Gender = "Please Choose Your Gender";
+     }
+     -->

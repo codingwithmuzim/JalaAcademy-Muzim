@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with Hover Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* smooth scrolling*/
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid black;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Hover effect: Change border color when the mouse is over the table */
+        table:hover {
+            border-color: red;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .box {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            background-color: #e9e9e9;
+        }
+
+        /* Visibility properties */
+        .visible-element {
+            visibility: visible;
+            background-color: lightgreen;
+        }
+
+        .hidden-element {
+            visibility: hidden;
+            background-color: lightcoral;
+        }
+
+        .collapse-element {
+            visibility: collapse;
+            background-color: lightblue;
+        }
+
+        /* Display properties */
+        .none-display {
+            display: none;
+        }
+
+        .inline-display {
+            display: inline;
+            background-color: lightpink;
+        }
+
+        .block-display {
+            display: block;
+            background-color: lightyellow;
+        }
+
+        .contents-display {
+            display: contents;
+            background-color: lightgray;
+        }
+
+        .list-item-display {
+            display: list-item;
+            list-style-type: disc;
+            margin-left: 20px;
+            background-color: lightpurple;
+        }
+
+        .box-margin {
+            background-color: #FFDDC1;
+            padding: 20px;
+            margin: 50px;
+            border: 2px solid #FF9E80;
+        }
+
+        /* Box with padding */
+        .box-padding {
+            background-color: #C1F0FF;
+            padding: 50px;
+            margin: 20px;
+            border: 2px solid #80D6FF;
+        }
+
+        /* Another example with different margin and padding */
+        .box-margin-small {
+            background-color: #D6FFB3;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #A3FF80;
+        }
+
+        .box-padding-large {
+            background-color: #FFB3D9;
+            padding: 70px;
+            margin: 5px;
+            border: 2px solid #FF80A3;
+        }
+
+        header {
+            border-bottom: 2px solid black;
+        }
+
+        .nav-links {
+            text-align: center;
+            margin: 40px auto;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #0056b3;
+        }
+
+        .multiple-backgrounds {
+            height: 500px;
+            width: 100%;
+            background-image: url('https://images.unsplash.com/photo-1720048169970-9c651cf17ccd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMXx8fGVufDB8fHx8fA%3D%3D'),
+                url('https://images.unsplash.com/photo-1719937206168-f4c829152b91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNDB8fHxlbnwwfHx8fHw%3D'),
+                url('https://media.istockphoto.com/id/1371339413/photo/co-working-team-meeting-concept-businessman-using-smart-phone-and-digital-tablet-and-laptop.webp?a=1&b=1&s=612x612&w=0&k=20&c=1sB_7FQTwsnEaFaln2nJabQqdjewqVMINvEImcj6CE4=');
+
+            /* Setting background sizes for each image */
+            background-size: 300px 300px, 200px 150px, 300px 200px;
+
+            /* Position the images */
+            background-position: left top, center bottom, right top;
+            background-repeat: no-repeat;
+            border: 2px solid #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .multiple-backgrounds h2 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-links">
+            <a href="#bottom">Click to go to the bottom of the page</a>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Table with Black Border and Hover Effect</h2>
+
+        <p>Hover over the table to change its border color:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>25</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>30</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Michael Johnson</td>
+                    <td>40</td>
+                    <td>Canada</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <h2>Visibility and Display Examples</h2>
+
+        <h3>Visibility Examples</h3>
+        <div class="box visible-element">This element is visible (default).</div>
+        <div class="box hidden-element">This element is hidden (but takes space).</div>
+        <div class="box collapse-element">This element is collapsed (works only for table rows).</div>
+
+        <h3>Display Examples</h3>
+        <div class="box none-display">This element has display: none (not shown).</div>
+        <div class="box inline-display">This element is inline. You can see it inline with the text.
+        </div>
+        <div class="box block-display">This element is block-level. It takes up the full width of its container.</div>
+        <div class="box contents-display">
+            <strong>This element is rendered using contents</strong> (the box disappears, but its children remain).
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cumque fugiat provident quisquam in
+                ratione minus? Quis debitis autem architecto nobis eos eligendi commodi eum, reiciendis explicabo nisi
+                distinctio vitae!
+                Recusandae perferendis eaque corporis pariatur dolore iure veritatis ab culpa veniam corporis at
+                nulla similique, modi deserunt ut accusantium cupiditate consectetur optio doloribus, rerum
+                necessitatibus fugit labore possimus enim perferendis.
+                Temporibus eaque esse est officiis perspiciatis quas saepe harum, fugit dignissimos officia nobis
+                reprehenderit asperiores itaque, laborum enim facere debitis! Architecto temporibus, quae similique sunt
+                id ab at eum repellat.
+                Recusandae adipisci sed consequuntur laudantium sunt odit? Corporis, quasi reiciendis tenetur eius
+                officia mollitia id suscipit iste nesciunt quisquam ea tempora sequi voluptas voluptatibus eos totam
+                asperiores. Cupiditate, assumenda soluta?
+                Doloremque eveniet consequatur alias facilis quos iste? Recusandae repellat, unde error, animi veniam,
+                accusamus quasi ex quidem hic fugiat amet inventore quisquam saepe velit numquam itaque iure sequi
+                consequuntur. Sit!
+                Libero, mollitia praesentium nemo obcaecati pariatur, non sed facilis voluptas dolore minus harum vero
+                nam tempore cum eaque assumenda sint. Autem esse inventore laudantium delectus? Expedita officia labore
+                earum amet.
+                Nisi excepturi suscipit adipisci neque maxime officia, esse dolorum quas quo numquam modi illo
+                consequatur nulla id magnam corporis quis non fuga minus dignissimos. Sapiente repellat illo perferendis
+                atque praesentium.
+                Odio eos in, natus rerum eligendi dolore quo ipsa animi ducimus. Quas omnis ex nesciunt ipsum provident
+                soluta dignissimos rem repellat optio tempora. Molestiae mollitia a, nemo perferendis cum autem.
+                Obcaecati facilis, nam doloribus expedita accusantium libero ex amet maxime minus ipsa aliquid accusamus
+                nemo necessitatibus voluptatum doloremque eaque enim voluptatem provident in, beatae vero sapiente
+                molestiae illo! Error, neque.
+                Provident qui ipsum libero voluptatem soluta ipsa! Accusamus, ut sint. Aut consequatur ducimus earum sed
+                blanditiis sapiente ipsa provident ratione, quaerat deserunt. Maxime repellendus asperiores quis debitis
+                distinctio vero placeat!
+                Quod doloremque consequatur at accusamus commodi totam similique voluptatibus illo sint. Dolores animi
+                voluptates ducimus deleniti fuga voluptate repudiandae, ipsam dolorem fugiat delectus, quia, excepturi
+                praesentium? Esse aspernatur quidem hic?
+                Voluptates error aperiam tempora dicta saepe, possimus dolorem quam eos maiores vel delectus accusamus
+                nesciunt temporibus modi cumque ab minima illum. Velit, minima non. Voluptatum delectus earum fugit
+                magni modi?
+                Soluta ab at eaque? Consequatur earum sint maxime et ut ratione, optio repudiandae soluta consequuntur
+                dolor in ipsam illo omnis saepe dolorem beatae maiores aut. Cumque at quidem libero similique!
+                Ex ab, iure quam maxime cumque provident ipsam nisi suscipit assumenda, dolor adipisci recusandae, dicta
+                incidunt facere optio veniam natus nobis vitae modi laboriosam illo nostrum? Illum voluptatibus cumque
+                exercitationem!
+                Eum laudantium omnis sit officiis alias illum fuga ipsum doloribus pariatur? Iure ratione magnam ea
+                adipisci porro cupiditate dolore atque cumque, facere qui? Ab placeat aperiam repellat mollitia nemo
+                harum.
+                Totam eveniet odio at sunt similique aperiam quo suscipit reiciendis, non voluptates consequatur
+                blanditiis exercitationem ipsa nisi minima explicabo? Odit, id eius repellat est dignissimos commodi hic
+
+                Minima voluptas voluptate repellat eligendi nulla incidunt cupiditate sunt optio illum molestiae
+                quisquam dolorum fugiat sequi similique quibusdam quas dicta, saepe praesentium laboriosam qui maiores
+                quia veritatis delectus. Eius, id?
+                Necessitatibus temporibus quae voluptatem tempore ad culpa eius, quidem nesciunt vitae assumenda porro
+                asperiores incidunt tenetur labore quam explicabo facilis fugit eveniet quos quis exercitationem
+                molestiae aut. Iusto, expedita consequatur.
+                Deleniti nam quod et quae nobis ex veritatis. Eos, veniam incidunt quidem quae cupiditate nulla quasi
+                quos vero, excepturi, ea esse nesciunt! Quibusdam cum reiciendis veritatis corporis aspernatur quaerat
+                quidem.
+                Et distinctio amet in. Tenetur provident tempora autem minima assumenda laboriosam omnis expedita,
+                laudantium officiis at dignissimos quibusdam et eaque mollitia alias error labore voluptas? Laborum
+                culpa deserunt dolorem nihil.
+                Nisi blanditiis ipsam sit dolorum dolore eveniet. Vel incidunt distinctio, similique modi nostrum beatae
+                error consequatur reiciendis a reprehenderit delectus id ipsum doloribus laboriosam accusamus molestias
+                perferendis veniam optio corporis!
+                Reprehenderit iusto quam id harum amet ipsam quibusdam, culpa unde molestias quo quod. Culpa omnis
+                aliquam rerum. Aspernatur possimus, non deleniti ipsa enim quasi minus, quos in facere error distinctio.
+                Quidem similique praesentium cum magni maiores sapiente ullam! Rem, tempore laborum dignissimos
+                doloremque nihil doloribus voluptatibus molestias iure ipsa, error exercitationem facilis officiis,
+                animi aspernatur in deserunt facere perspiciatis nostrum.
+                Delectus ipsum, quisquam tempore odio ducimus quia aut, est vitae possimus commodi eveniet itaque nulla
+                amet earum facere. Cum omnis, quo dolorum dolorem alias optio assumenda aperiam perferendis voluptatum
+                voluptates!
+                Repudiandae laborum dolore recusandae nihil temporibus aliquam perspiciatis explicabo, laboriosam
+                expedita consequatur ducimus dolorum illum voluptate, qui quaerat nulla eligendi deleniti assumenda aut
+                cum tempore fugiat. Perspiciatis nulla ad exercitationem.
+                Itaque accusamus accusantium ex sequi esse deserunt, repellat sint tempore sit saepe qui dolorem modi
+                aut illo alias est dicta. Dolorum quibusdam ducimus a atque, error excepturi cumque possimus ut.
+                Veniam, non ratione quas ducimus consequuntur accusamus temporibus nemo quo ea possimus odio quam.
+                Facilis, ex. Nulla nemo, ratione itaque consectetur laudantium deleniti. Repellat culpa vitae
+                perferendis ipsa totam dolores!
+                Quisquam minus dolores dolore inventore? Incidunt hic consequatur quibusdam est aliquid ad blanditiis
+                fugit vel repellendus. Esse molestias ipsum, cupiditate a non quibusdam vero dolore minima pariatur
+                voluptatum laborum sapiente.
+                Dolores quisquam necessitatibus unde provident iste odio? Impedit adipisci cum molestias ipsum odit
+                eligendi sequi explicabo, repellendus temporibus, ab nostrum saepe. Assumenda minima fugit possimus
+                mollitia a sequi reiciendis eligendi!
+                Magni voluptates mollitia minima delectus nobis cupiditate blanditiis! Sit nisi quia beatae sed quisquam
+                aperiam ea voluptates nesciunt quis error cum voluptas illo unde, saepe suscipit accusantium eveniet
+                impedit. Eum!
+                Repudiandae doloremque nihil tenetur delectus praesentium cum consequuntur assumenda quisquam dolore
+                laboriosam rerum minus quas exercitationem architecto tempora quae voluptate numquam vitae at incidunt
+                possimus, eos, modi deserunt reiciendis. Molestiae.
+                Perspiciatis ab atque in eius, nisi laboriosam iure? Ex error debitis voluptate nobis! Eius, laudantium.
+                Earum voluptates velit atque molestiae saepe excepturi quia asperiores maiores ab labore? Magni,
+                consequuntur obcaecati.
+                Obcaecati natus, iste, veniam nesciunt ea veritatis similique harum est corrupti dolorem deleniti
+                exercitationem minus alias dolorum non expedita, pariatur odit culpa perferendis vitae! Quo nemo tempore
+                explicabo quae soluta.
+                Minima adipisci enim, animi assumenda laudantium, tempore laboriosam quod autem iure atque et nam
+
+                Asperiores fuga voluptas dolorem quas voluptate sunt veritatis temporibus id eum veniam, architecto
+                nihil earum deleniti quo laudantium totam mollitia. Ut aut quis cumque nihil molestias sapiente! Iure,
+                nesciunt maiores.
+                Sapiente dolore, mollitia ipsum, architecto culpa hic quas id repellendus delectus accusamus voluptas
+                libero consequatur in at eius. Cumque ipsa, odit eaque quia molestias doloribus totam repellat omnis
+                quod dolore!
+                Incidunt, impedit, aliquam placeat ex corporis at architecto labore rem, quod ipsum ullam animi.
+                Quisquam tempora labore, minus illum dignissimos eaque aut impedit eligendi quis quod recusandae
+                accusantium ducimus cum.
+                Sit vel eum pariatur nulla ea enim sequi aperiam itaque quidem corrupti non voluptatibus similique
+                consectetur, magni quod soluta quibusdam odio unde doloribus placeat, harum cupiditate. Accusantium
+                perspiciatis similique incidunt.
+                Quod pariatur dolore minima illo voluptates minus temporibus ratione provident assumenda recusandae
+                libero aliquam officia nobis odio reprehenderit numquam maiores, cumque ipsa suscipit maxime corporis
+                accusantium sunt! Reiciendis, porro qui.
+                Ipsam commodi debitis esse nesciunt iste ducimus! Earum, possimus dicta? Exercitationem adipisci ullam
+                eos quam nostrum perspiciatis sed fuga quos! Ex hic debitis ipsa distinctio ducimus mollitia ullam saepe
+                repellat.</p>
+            <div class="box-margin">
+                This box has a **50px margin** and **20px padding**.
+                The margin creates space between this box and the container or other elements,
+                while padding adds space inside the box between the content and its border.
+            </div>
+            <div class="box-padding">
+                This box has **50px padding** and **20px margin**.
+                Padding pushes the content away from the border inside the box,
+                while the margin keeps this box away from other elements.
+            </div>
+            <div class="box-margin-small">
+                This box has **10px margin** and **10px padding**.
+                It's smaller but illustrates the same concept.
+            </div>
+            <div class="box-padding-large">
+                This box has **70px padding** and **5px margin**, meaning there's a lot of space between the content and
+                the border but not much space between this box and other elements.
+            </div>
+            <div class="multiple-backgrounds">
+                <h2>Background Images Overlapping</h2>
+            </div>
+        </div>
+    </div>
+    <footer id="bottom">
+        <p>You've reached the bottom!</p>
+        <div class="nav-links">
+            <a href="#top">Click to go to the top of the page</a>
+        </div>
+    </footer>
+</body>
+
+</html>

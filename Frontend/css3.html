@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Compatibility</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-weight: 800;
+        }
+        /* Style for table with fixed and none table-layout */
+        .table-fixed {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .table-none {
+            width: 100%;
+            table-layout: auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Style for lists with different list-style-types */
+        ul {
+            list-style-type: square;
+        }
+
+        ol {
+            list-style-type: lower-alpha;
+        }
+
+        /* Grid layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            padding: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        /* Hero image */
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Responsive media queries */
+        @media only screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Viewport for image and video */
+        img,
+        video {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Css Compatibility</h1>
+    <!-- 1. Table with fixed and auto table layout -->
+    <h2>Table with Fixed and None Layout</h2>
+    <h3>Fixed Layout</h3>
+    <table class="table-fixed">
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+        </tr>
+    </table>
+
+    <h3>Auto Layout (None)</h3>
+    <table class="table-none">
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+        </tr>
+    </table>
+
+    <!-- 2. List with different list-style-type -->
+    <h2>Lists with Different Styles</h2>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ul>
+    <ol>
+        <li>Ordered item 1</li>
+        <li>Ordered item 2</li>
+        <li>Ordered item 3</li>
+    </ol>
+    <h3>Definition List </h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language, the standard language for creating web pages.</dd>
+    
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets, used to style and layout web pages.</dd>
+    
+        <dt>JavaScript</dt>
+        <dd>A programming language commonly used to create interactive effects within web browsers.</dd>
+    </dl>
+    
+
+    <!-- 3. Grid with different types -->
+    <h2>Grid Layout</h2>
+    <div class="grid-container">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+    </div>
+
+    <!-- 4. Hero image -->
+    <div class="hero">
+        <h1>Hero Image Section</h1>
+    </div>
+
+    <!-- 5. Viewport for grid, media queries, image and video -->
+    <h2>Responsive Viewport for Image and Video</h2>
+    <img src="https://via.placeholder.com/600x400" alt="Sample Image">
+    <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</body>
+
+</html>

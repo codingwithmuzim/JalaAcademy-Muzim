@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input,
+        button {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"],
+        input {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="reset"],
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+        }
+
+        input[type="reset"] {
+            margin-right: 20px;
+        }
+
+        input[type="reset"]:hover,
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .iframe-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .iframe-container iframe {
+            border: 2px solid #333;
+            border-radius: 4px;
+            width: 45%;
+            height: 300px;
+        }
+        marquee {
+            display: block;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #ffeb3b;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>User Registration Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username (Maxlength: 10, Size: 20, Readonly, Value: "Muzim"):</label>
+                <input type="text" id="username" name="username" maxlength="10" size="20" value="Muzim"
+                    placeholder="Enter your username" readonly>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <label for="age">Age ((Number - Min: 18, Max: 60, Value: 30)):</label>
+                <input type="number" id="age" name="age" min="18" max="60" value="30" placeholder="Enter your age"
+                    required>
+                <label for="range">Volume (Range - Min: 0, Max: 100, Value: 50):</label>
+                <input type="range" id="range" name="volume" min="0" max="100" value="50">
+                <label for="color">Choose a Color (Disabled, Value: #ff0000): </label>
+                <input style="width: 20%;
+                height:10vh" type="color" value="#ff0000" id="color" name="color" disabled>
+                <label for="birthday">Birthday (Date):</label>
+                <input type="date" id="birthday" name="birthday">
+                <label for="file">Upload File:</label>
+                <input type="file" id="file" name="file">
+                <label for="time">Pick a Time (Time):</label>
+                <input type="time" id="time" name="time">
+                <label for="month">Select Month:</label>
+                <input type="month" id="month" name="month">
+                <label for="week">Select Week:</label>
+                <input type="week" id="week" name="week">
+                <label for="email">Email (Email):</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <div class="gender">
+                    <label>Gender:</label>
+                    <span>
+                        <label for="male">Male</label>
+                        <input style="width: 5%;" type="radio" id="male" name="gender" value="male">
+                    </span>
+                    <span>
+                        <label for="female">Female</label>
+                        <input style="width: 5%;" type="radio" id="female" name="gender" value="female">
+                    </span>
+                </div>
+            </div>
+            <button type="button" onclick="alert('Button Clicked')">Click Me!</button>
+
+            <!-- Form action buttons (Submit and Reset) -->
+            <div class="form-actions">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <h2>Demonstration of the Target Attribute</h2>
+
+        <p><strong>Target Attribute in Anchor Links:</strong></p>
+
+        <ul>
+            <li><a href="https://www.google.com" target="_blank">Open Google in a New Tab (target="_blank")</a></li>
+            <li><a href="https://www.wikipedia.org" target="_self">Open Wikipedia in the Same Tab (target="_self")</a>
+            </li>
+            <li><a href="https://www.example.com" target="_parent">Open Example in Parent Frame (target="_parent")</a>
+            </li>
+            <li><a href="https://www.example.com" target="_top">Open Example in Full Window (target="_top")</a></li>
+        </ul>
+    </div>
+    <marquee behavior="scroll" direction="left">
+        Welcome to our demo page! Check out the latest information below!
+    </marquee>
+    <div class="iframe-container">
+        <iframe src="https://www.google.com/" title="Google Iframe">
+            Your browser does not support iframes.
+        </iframe>
+
+        <iframe src="https://www.wikipedia.org" title="Wikipedia Iframe">
+            Your browser does not support iframes.
+        </iframe>
+    </div>
+    
+
+
+</body>
+
+</html>

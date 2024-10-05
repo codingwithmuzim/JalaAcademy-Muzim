@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color:black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            margin: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        article {
+            margin: 20px 0;
+        }
+
+        aside {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            /* Ensure footer stays at the bottom */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <hgroup>
+            <h1>Welcome to Our Web Page</h1>
+            <h2>Exploring HTML5 Semantic Elements</h2>
+        </hgroup>
+        <nav>
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+                <li><a href="#section4">Section 4</a></li>
+                <li><a href="#footer">Footer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section1">
+            <h2>Section 1: Introduction</h2>
+            <p>This section introduces the topic of HTML5 semantic elements.</p>
+            <time datetime="2024-01-01">January 1, 2024</time>
+        </section>
+
+        <section id="section2">
+            <h2>Section 2: Featured Article</h2>
+            <article>
+                <h3>The Importance of Semantic HTML</h3>
+                <p><mark>Semantic HTML</mark> improves the accessibility and SEO of web pages.</p>
+            </article>
+            <aside>
+                <h4>Related Resources</h4>
+                <p>Check out our guides on HTML5 and web development.</p>
+            </aside>
+        </section>
+
+        <section id="section3">
+            <h2>Section 3: Images and Captions</h2>
+            <figure>
+                <img src="https://via.placeholder.com/600x400" alt="Placeholder Image">
+                <figcaption>This is a caption for the placeholder image.</figcaption>
+            </figure>
+        </section>
+
+        <section id="section4">
+            <h2>Section 4: Conclusion</h2>
+            <p>In conclusion, using semantic HTML elements enhances the structure and meaning of web content.</p>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2024 HTML5 Semantic Elements Example</p>
+    </footer>
+</body>
+
+</html>
